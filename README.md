@@ -1,7 +1,7 @@
 # Source Academy Miscellanenous Files
 
 ## List Sorter
-One of my projects as a CS1101S TA. The List Sorter applies the concepts of sorting that are discussed in CS1101S Programming Methodology lecture, namely:
+One of my projects as a teaching assistant for CS1101S - Programming Methodology. The List Sorter applies the concepts of sorting that are discussed in CS1101S lecture #6, namely:
 - Selection Sort (implemented)
 - Insertion Sort (under construction)
 - Merge Sort (under construction)
