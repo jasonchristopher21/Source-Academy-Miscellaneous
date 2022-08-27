@@ -1,15 +1,6 @@
 import { square, blank, stack_frac, beside_frac, show, random_color, red, green } from "rune";
 
 function selection_sort(xs) {
-    
-    function find_max(lst, max) {
-        return is_null(lst)
-               ? max
-               : head(lst) > max
-               ? find_max(tail(lst), head(lst))
-               : find_max(tail(lst), max);
-    }
-    
     display_chart(xs, x => x);
     const lst_final = selection_sort_helper(xs, list(), 0, find_max(xs, -999), 0);
     display_chart(lst_final, green);
@@ -24,23 +15,6 @@ function selection_sort_helper(xs, new_list, iter_count, max, min) {
                : head(lst) < min
                ? find_min_pos(tail(lst), head(lst), count + 1, count)
                : find_min_pos(tail(lst), min, count + 1, res);
-    }
-    
-    function find_max(lst, max) {
-        return is_null(lst)
-               ? max
-               : head(lst) > max
-               ? find_max(tail(lst), head(lst))
-               : find_max(tail(lst), max);
-    }
-    
-    
-    function find_min(lst, min) {
-        return is_null(lst)
-               ? min
-               : head(lst) < min
-               ? find_min(tail(lst), head(lst))
-               : find_min(tail(lst), min);
     }
     
     function display_minimum_chart(lst, target_pos, iter_count, count) {
@@ -84,25 +58,6 @@ function selection_sort_helper(xs, new_list, iter_count, max, min) {
 
 function display_chart(lst, color_func) {
     
-    // Finds the maximum element of the list
-    function find_max(lst, max) {
-        return is_null(lst)
-               ? max
-               : head(lst) > max
-               ? find_max(tail(lst), head(lst))
-               : find_max(tail(lst), max);
-    }
-    
-    // Finds the minimum element of the list, for negative value
-    // readjustment
-    function find_min(lst, min) {
-        return is_null(lst)
-               ? min
-               : head(lst) < min
-               ? find_min(tail(lst), head(lst))
-               : find_min(tail(lst), min);
-    }
-    
     const max = find_max(lst, -999);
     const min = find_min(lst, 999);
     
@@ -126,6 +81,25 @@ function display_chart(lst, color_func) {
     } else {
         show(chartify(lst, length(lst), 0));
     }
+}
+
+
+    
+function find_max(lst, max) {
+    return is_null(lst)
+           ? max
+           : head(lst) > max
+           ? find_max(tail(lst), head(lst))
+           : find_max(tail(lst), max);
+}
+
+
+function find_min(lst, min) {
+    return is_null(lst)
+           ? min
+           : head(lst) < min
+           ? find_min(tail(lst), head(lst))
+           : find_min(tail(lst), min);
 }
 
 // TEST
