@@ -58,11 +58,14 @@ function generate_palindrome(s) {
                       remove_duplicates(filter(p => !equal(p, head(xs)), 
                                         tail(xs))));
     }
+	
+    function is_palindrome_list(xs) {
+        return equal(xs, reverse(xs));
+    }
     
     const xs = string_to_list(s);
     const words = permutations(xs);
-    return map(list_to_string, remove_duplicates(filter(is_palindrome, words)));
-    
+    return map(list_to_string, remove_duplicates(filter(is_palindrome_list, words)));    
 }
 
 // TASK 2 - A Multiverse of Sequences
